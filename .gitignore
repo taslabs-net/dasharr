@@ -1,0 +1,71 @@
+# environment variables
+.env
+.env*.local
+
+# deployment and sensitive files
+deploy.sh
+documents/attribution.md
+cleanup-github.sh
+.gitignore-public
+README-APP.md
+config/
+
+# Docker user data
+config/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# logs
+logs/
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# temporary files
+*.tmp
+*.temp
+.cache/
+
+# private keys
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+
+# database
+*.db
+*.sqlite
+*.sqlite3
+
+# backup files
+*.bak
+*.backup
+*.old
+
+# Node.js (for the dashrr subdirectory)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js specific (for the dashrr subdirectory)
+.next/
+out/
+build/
+*.tsbuildinfo
+.vercel
+next-env.d.ts
+
+# generated content
+.contentlayer
+.content-collections
+.source
