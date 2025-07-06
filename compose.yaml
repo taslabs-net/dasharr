@@ -1,0 +1,15 @@
+services:
+  dasharr:
+    image: schenanigans/dasharr:latest
+    container_name: dasharr
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config:/app/config
+    env_file:
+      - .env
+    restart: unless-stopped
+    environment:
+      - TZ=America/New_York  # Change to your timezone
+      - PUID=1000
+      - PGID=1000

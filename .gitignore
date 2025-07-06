@@ -1,0 +1,18 @@
+# Environment files
+.env
+.env.local
+.env.production
+
+# Config directory
+config/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

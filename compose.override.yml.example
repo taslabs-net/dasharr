@@ -1,0 +1,32 @@
+# Example override file for advanced configurations
+# Rename to compose.override.yml to use
+
+services:
+  dasharr:
+    # Example: Use a specific version instead of latest
+    # image: schenanigans/dasharr:v0.4.40
+    
+    # Example: Add labels for Traefik
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.dasharr.rule=Host(`dasharr.example.com`)"
+    #   - "traefik.http.services.dasharr.loadbalancer.server.port=3000"
+    
+    # Example: Add to specific networks
+    # networks:
+    #   - proxy
+    #   - media
+    
+    # Example: Resource limits
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1.0'
+    #       memory: 512M
+
+# Example: External networks
+# networks:
+#   proxy:
+#     external: true
+#   media:
+#     external: true
