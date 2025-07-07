@@ -1,6 +1,6 @@
 # Dasharr
 
-A unified media dashboard that consolidates your Plex, Jellyfin, Radarr, Sonarr, and other media services into one beautiful interface.
+A unified media and network dashboard that consolidates your Plex, Jellyfin, Radarr, Sonarr, UniFi Network, and other services into one beautiful interface.
 
 ![Dasharr Screenshot](screenshots/screenshot.png)
 
@@ -10,7 +10,7 @@ A unified media dashboard that consolidates your Plex, Jellyfin, Radarr, Sonarr,
 - **Beautiful Interface** - Modern, responsive design with multiple themes  
 - **Easy Configuration** - Web-based setup with no config files needed
 - **Docker Ready** - Simple deployment with Docker Compose
-- **Service Integration** - Supports Plex, Jellyfin, Tautulli, Overseerr, Radarr, Sonarr, SABnzbd, qBittorrent, and Prowlarr
+- **Service Integration** - Supports Plex, Jellyfin, Tautulli, Overseerr, Radarr, Sonarr, SABnzbd, qBittorrent, Prowlarr, and UniFi Network
 
 ## Quick Start
 
@@ -91,6 +91,7 @@ Full documentation is available at [https://dasharr.io](https://dasharr.io)
 - **Prowlarr** - Indexer management
 - **SABnzbd** - Usenet downloader
 - **qBittorrent** - BitTorrent client
+- **UniFi Network** - Multi-site network monitoring and management
 
 ## Security & Privacy
 
