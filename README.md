@@ -10,7 +10,7 @@ A unified media and network dashboard that consolidates your Plex, Jellyfin, Rad
 - **Beautiful Interface** - Modern, responsive design with multiple themes  
 - **Easy Configuration** - Web-based setup with no config files needed
 - **Docker Ready** - Simple deployment with Docker Compose
-- **Service Integration** - Supports Plex, Jellyfin, Tautulli, Overseerr, Radarr, Sonarr, SABnzbd, qBittorrent, Prowlarr, and UniFi Network
+- **Service Integration** - Supports Plex, Jellyfin, Tautulli, Overseerr, Jellyseerr, Radarr, Sonarr, SABnzbd, qBittorrent, Prowlarr, and UniFi Network
 
 ## Quick Start
 
@@ -85,7 +85,8 @@ Full documentation is available at [https://dasharr.io](https://dasharr.io)
 - **Plex** - Media server monitoring
 - **Jellyfin** - Open-source media server
 - **Tautulli** - Plex statistics and monitoring
-- **Overseerr** - Request management
+- **Overseerr** - Request management for Plex
+- **Jellyseerr** - Request management for Jellyfin
 - **Radarr** - Movie management
 - **Sonarr** - TV show management
 - **Prowlarr** - Indexer management

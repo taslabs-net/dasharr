@@ -103,6 +103,23 @@ Dasharr makes **read-only** API calls to gather information for display. It does
 
 **Data Accessed**: Request counts, pending requests, media availability
 
+### Jellyseerr
+
+**Authentication Method**: X-Api-Key header  
+**API Version**: v1
+
+**API Endpoints Called**:
+- `GET /api/v1/status` - Application status
+- `GET /api/v1/request` - Media requests list
+- `GET /api/v1/request/count` - Request statistics
+- `GET /api/v1/media` - Media availability status
+- `GET /api/v1/user` - User information
+- `GET /api/v1/search/multi` - Multi-search results
+- `GET /api/v1/discover/movies` - Discover movies
+- `GET /api/v1/discover/tv` - Discover TV shows
+
+**Data Accessed**: Request counts, pending requests, media availability, search results
+
 ### SABnzbd
 
 **Authentication Method**: apikey URL parameter
@@ -140,6 +157,20 @@ Dasharr makes **read-only** API calls to gather information for display. It does
 - `GET /api/v1/indexerstats` - Indexer statistics
 
 **Data Accessed**: Indexer counts, search statistics, system health
+
+### UniFi Network
+
+**Authentication Method**: API Key via authorization request header
+**API Version**: v2
+
+**API Endpoints Called**:
+- `GET /proxy/network/v2/api/site/{site}/dashboard` - Site dashboard statistics
+- `GET /proxy/network/v2/api/site/{site}/stat/device` - Device statistics
+- `GET /proxy/network/v2/api/site/{site}/stat/client` - Client statistics
+- `GET /proxy/network/v2/api/site/{site}/stat/health` - Network health status
+- `GET /v2/api/sites` - List of managed sites (for multi-site)
+
+**Data Accessed**: Connected devices, network statistics, site health, bandwidth usage
 
 ## Security Notes
 
