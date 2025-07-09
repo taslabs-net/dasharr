@@ -52,6 +52,7 @@ services:
     environment:
       - PUID=1000  # Optional: defaults to 1000
       - PGID=1000  # Optional: defaults to 1000
+      # - DASHARR_SELF_SIGNED=false  # Optional: set to false to require valid certificates
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
@@ -75,6 +76,8 @@ Dasharr supports two configuration methods:
 
 ### Environment Variables
 You can also configure services via environment variables. See the [Docker Hub page](https://hub.docker.com/r/schenanigans/dasharr) for all available options.
+
+**Note:** Environment variables take precedence over web-based configuration. If both are set, the environment variable values will be used.
 
 ## Documentation
 
