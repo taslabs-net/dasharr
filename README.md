@@ -108,4 +108,5 @@ Dasharr is designed with security and privacy in mind:
 
 - Documentation: https://dasharr.io
 - Docker Hub: https://hub.docker.com/r/schenanigans/dasharr
+- GitHub: https://github.com/taslabs-net/dasharr
 - Buy Me a Coffee: https://coff.ee/taslabs
