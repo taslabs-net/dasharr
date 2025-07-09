@@ -1,6 +1,6 @@
 services:
   dasharr:
-    image: schenanigans/dasharr:latest
+    image: schenanigans/dasharr:0.5.44
     container_name: dasharr
     ports:
       - "3000:3000"
