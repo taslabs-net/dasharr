@@ -1,6 +1,6 @@
 services:
   dasharr:
-    image: schenanigans/dasharr:0.5.45
+    image: schenanigans/dasharr:latest
     container_name: dasharr
     ports:
       - "3000:3000"
@@ -10,7 +10,5 @@ services:
       - .env
     restart: unless-stopped
     environment:
-      - TZ=America/New_York  # Change to your timezone
       - PUID=1000
       - PGID=1000
-      # - DASHARR_SELF_SIGNED=false  # Uncomment to require valid TLS certificates
