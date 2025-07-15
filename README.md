@@ -7,7 +7,8 @@ A unified media and network dashboard that consolidates your Plex, Jellyfin, Rad
 ## Features
 
 - **Real-time Statistics** - Monitor active streams, downloads, and system health
-- **Beautiful Interface** - Modern, responsive design with multiple themes  
+- **Beautiful Interface** - Modern, responsive design with multiple themes
+- **KIOSK Mode** - Double clicking header to enable/disable Kiosk Mode  
 - **Easy Configuration** - Web-based setup with no config files needed
 - **Docker Ready** - Simple deployment with Docker Compose
 - **Service Integration** - Supports Plex, Jellyfin, Tautulli, Overseerr, Jellyseerr, Radarr, Sonarr, SABnzbd, qBittorrent, Prowlarr, and UniFi Network
