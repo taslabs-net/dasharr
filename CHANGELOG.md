@@ -138,10 +138,7 @@
   - Cleaner interface for basic vs advanced configuration options
 
 ### Changed
-- **Authentication State Management** - Improved default behavior
-  - "Enable Auth" checkbox now unchecked by default on fresh installs
-  - Authentication section moved above metrics push configuration
-  - Fixed confusing UX where auth appeared enabled when database credentials existed
+
 - **Startup Logging** - Cleaner console output
   - Removed redundant Node.js startup banner (kept ASCII art banner)
   - "Initializing metrics pusher..." only shows when push metrics are actually enabled
@@ -193,14 +190,6 @@
   - Six metric charts added to Sonarr page (Series, Episodes, Queue, Missing, Monitored, Unmonitored)
   - Reusable `MetricChart` component for easy metrics visualization across all services
   - 24-hour historical view by default with customizable time ranges
-- **Admin Panel Authentication** - Basic authentication for admin routes
-  - Optional username/password protection for `/admin` and `/api/admin/*` endpoints
-  - Environment variable configuration (`DASHARR_ADMIN_USERNAME`, `DASHARR_ADMIN_PASSWORD`)
-  - Web UI for managing authentication credentials in admin panel
-  - Database storage for credentials with bcrypt password hashing
-  - Backward compatible - authentication disabled by default
-  - Edge Runtime compatible middleware implementation
-  - Clean, focused authentication settings interface without extensive documentation
 - **Comprehensive Logging System**
   - Database operation logging for all CRUD operations
   - Metrics collection cycle logging with detailed timing information
