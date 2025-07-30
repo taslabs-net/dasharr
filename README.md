@@ -15,6 +15,22 @@ A unified media and network dashboard that consolidates your Plex, Jellyfin, Rad
 
 ## Quick Start
 
+### Download Configuration Files
+
+```bash
+# Download the example environment file
+wget -O .env https://raw.githubusercontent.com/taslabs-net/dasharr/main/.env.example
+
+# Download the Docker Compose file
+wget -O compose.yaml https://raw.githubusercontent.com/taslabs-net/dasharr/main/compose.yaml.example
+
+# Edit the .env file with your service URLs and API keys
+nano .env  # or use your preferred editor
+
+# Start Dasharr with Docker Compose
+docker compose up -d
+```
+
 ### Using Docker Run
 
 **Recommended - Using a Docker Volume (no permission issues):**
@@ -106,7 +122,7 @@ Full documentation is available at [https://dasharr.io](https://dasharr.io)
 
 Dasharr is designed with security and privacy in mind:
 - **Read-Only Access** - Only reads data from your services, never modifies
-- **Transparent API Usage** - See [api-requests-made.md](api-requests-made.md) for all API calls
+- **Transparent API Usage** - See [api-requests-made.md](../../api-requests-made.md) for all API calls
 - **Network Isolation** - Can be run on a dedicated Docker network for enhanced security
 
 ## Support
