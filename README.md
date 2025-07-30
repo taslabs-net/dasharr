@@ -1,17 +1,17 @@
 # Dasharr
 
-A unified media and network dashboard that consolidates your Plex, Jellyfin, Radarr, Sonarr, UniFi Network, and other services into one beautiful interface.
+A unified media and network dashboard that consolidates your Plex, Jellyfin, Radarr, Sonarr, Bazarr, UniFi Network, and other services into one beautiful interface.
 
 ![Dasharr Screenshot](screenshots/screenshot.png)
 
 ## Features
 
 - **Real-time Statistics** - Monitor active streams, downloads, and system health
-- **Beautiful Interface** - Modern, responsive design with multiple themes
-- **KIOSK Mode** - Double clicking header to enable/disable Kiosk Mode  
+- **Multi-Instance Support** - Configure multiple instances of the same service (e.g., 1080p & 4K Radarr instances)
+- **Beautiful Interface** - Modern, responsive design with multiple themes  
 - **Easy Configuration** - Web-based setup with no config files needed
 - **Docker Ready** - Simple deployment with Docker Compose
-- **Service Integration** - Supports Plex, Jellyfin, Tautulli, Overseerr, Jellyseerr, Radarr, Sonarr, SABnzbd, qBittorrent, Prowlarr, and UniFi Network
+- **Service Integration** - Supports Plex, Jellyfin, Tautulli, Overseerr, Jellyseerr, Radarr, Sonarr, Bazarr, SABnzbd, qBittorrent, Prowlarr, and UniFi Network
 
 ## Quick Start
 
@@ -70,13 +70,16 @@ Then visit http://localhost:3000 to start configuring your services.
 Dasharr supports two configuration methods:
 
 ### Web-Based Configuration (Recommended)
-1. Navigate to http://localhost:3000
-2. Click "Configuration" in the navigation
+1. Navigate to http://localhost:3000/admin
+2. Add your services by clicking "Add Service"
 3. Enter your service URLs and API keys
 4. Click "Test Connection" and "Save"
+5. For multiple instances of the same service, repeat the process
 
 ### Environment Variables
 You can also configure services via environment variables. See the [Docker Hub page](https://hub.docker.com/r/schenanigans/dasharr) for all available options.
+
+**Note:** Environment variables currently support only single instances per service type. For multiple instances, use the web UI configuration.
 
 **Note:** Environment variables take precedence over web-based configuration. If both are set, the environment variable values will be used.
 
@@ -93,6 +96,7 @@ Full documentation is available at [https://dasharr.io](https://dasharr.io)
 - **Jellyseerr** - Request management for Jellyfin
 - **Radarr** - Movie management
 - **Sonarr** - TV show management
+- **Bazarr** - Subtitle management
 - **Prowlarr** - Indexer management
 - **SABnzbd** - Usenet downloader
 - **qBittorrent** - BitTorrent client
