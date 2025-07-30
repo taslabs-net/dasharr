@@ -12,3 +12,10 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - TZ=America/New_York  # Optional: Set your timezone
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/startup"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
