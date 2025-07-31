@@ -65,11 +65,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - dasharr_config:/app/config  # or use bind mount: ./config:/app/config
-    environment:
-      - PUID=1000  # Optional: defaults to 1000
-      - PGID=1000  # Optional: defaults to 1000
-      # - DASHARR_SELF_SIGNED=false  # Optional: set to false to require valid certificates
+      - ./config:/app/config
+    env_file: .env
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
