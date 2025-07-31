@@ -1,5 +1,137 @@
 # Changelog
 
+## [0.8.15] - 2025-07-31
+
+### Added
+- **Optional Admin Authentication** - Secure admin panel access with single-user authentication
+  - Authentication is disabled by default
+  - Single admin account system (no multi-user support by design)
+  - Session-based authentication using better-auth library with SQLite backend
+  - Password change functionality for logged-in administrators
+  - Automatic security lockout prevention - auth disables if no admin exists
+  - Easy setup with default secret in .env.example
+  - Integrated authentication toggle in admin settings page
+  - Admin account creation workflow built into settings interface
+  - Middleware-based route protection for /admin paths (except /admin/login)
+  - HTTP-only session cookies for enhanced security
+
+### Technical
+- Implemented better-auth library for authentication management
+- SQLite database for authentication data persistence
+- Environment variable configuration with DASHARR_SECRET
+- Automatic database schema initialization on first use
+- Security measures to prevent lockout scenarios
+- Clean separation of auth state from service configuration
+
+### Security
+- Authentication is opt-in only - no default credentials
+- Secure session management with httpOnly cookies
+- Automatic auth disable if no admin account exists
+- Clear warnings about replacing default secret
+
+## [0.8.14] - 2025-07-25
+
+### Fixed
+- **Critical JSON Configuration Migration Bugs** - Resolved multiple critical issues in JSON to database migration
+  - **Instance ID Generation Bug**: Fixed malformed URLs like `/jellyseerr11` instead of `/jellyseerr1`
+    - Proper regex parsing for service keys that already contain numbers
+    - Prevents double-digit instance IDs when migrating existing configurations
+  - **Database Persistence Failure**: Fixed services appearing "Configured" but not actually saved to database
+    - Added immediate verification after each database save operation
+    - Ensures migrated services are visible in admin panel after migration
+    - Prevents false positive migration success messages
+  - **Unsafe Config File Handling**: Changed from deletion to safe backup during migration
+    - JSON config files now renamed to `.safe-to-delete.json` instead of being deleted
+    - User-friendly messaging about file safety and recovery options
+    - Allows users to recover configurations if migration verification fails
+  - **Enhanced Error Detection**: Comprehensive logging and explicit failure detection
+    - Better migration debugging with detailed progress indicators
+    - Improved error reporting for troubleshooting migration issues
+    - Step-by-step verification logging throughout migration process
+
+### Technical
+- Enhanced migration logic with proper service type extraction
+- Improved database transaction handling with rollback support
+- Better error handling and recovery mechanisms for affected users
+- Comprehensive verification system to ensure migration success
+
+### Breaking Changes
+- None - All changes are backward compatible and improve existing functionality
+
+## [0.8.13] - 2025-07-23
+
+### Fixed
+- **Critical Database Bug** - Fixed production database initialization failure that caused services to disappear after migration
+  - Removed flawed build-time detection logic that caused in-memory database fallback in production environments
+  - Added comprehensive database file validation and error handling
+  - Implemented recovery mechanism for users affected by the migration bug
+  - Enhanced logging and directory writability checks
+
+### Added
+- **Environment Variable Sync** - Automatic synchronization of .env configuration to database on startup
+  - Services configured in .env files are now automatically imported and updated in the database
+  - Support for configuration via .env file, UI, or mix of both approaches
+  - Real-time sync ensures .env changes are reflected immediately
+- **Bazarr Admin Integration** - Complete admin UI integration for Bazarr service configuration
+  - Added Bazarr admin configuration page with setup instructions
+  - Integrated Bazarr into admin navigation and service discovery
+  - Fixed missing admin UI components that prevented Bazarr from appearing in left navigation
+
+### Improved
+- **Configuration System** - Enhanced multi-source configuration management
+  - Unified database-only storage with .env and UI input sources
+  - Simplified configuration flow without complex migration logic
+  - Better error handling and validation for service configurations
+- **Development Experience** - Fixed local development CONFIG_DIR path resolution
+  - Added CONFIG_DIR environment variable support for development
+  - Improved error messages and debugging information
+
+### Technical
+- Enhanced syncEnvToDatabase function with comprehensive service support
+- Added proper TypeScript error handling and type safety improvements
+- Fixed admin UI content management system integration for all services
+- Streamlined database initialization with better error recovery
+
+## [0.8.12] - 2025-07-23
+
+### Added
+- **Bazarr Integration** - Complete integration of Bazarr subtitle management service
+  - Comprehensive Bazarr API client with 30+ endpoints (system, health, statistics, providers, episodes, movies, tasks, webhooks)
+  - Bazarr overview API endpoint aggregating data from 13 different Bazarr API endpoints
+  - Dashboard widget displaying subtitle completion rates, active providers, and health status
+  - Full admin interface integration with multi-instance support
+  - Real-time monitoring of subtitle operations and provider status
+
+### Improved
+- **Architecture Cleanup** - Removed unnecessary legacy configuration system complexity
+  - Eliminated redundant single-instance config format and migration logic
+  - Simplified migration to only handle JSON-to-SQLite storage backend changes
+  - Cleaner codebase with single multi-instance configuration approach
+  - Reduced code complexity and improved maintainability
+
+### Technical
+- Added Bazarr to service type definitions and admin interface
+- Implemented comprehensive error handling and logging for Bazarr operations
+- Enhanced service discovery and configuration validation
+- Streamlined configuration management with unified multi-instance approach
+
+## [0.8.11] - 2025-07-23
+
+### Fixed
+- **Critical Migration Startup Error** - Resolved "Migration failed: No services migrated" error preventing application startup
+  - Enhanced migration logic in `loadSavedConfig` function with detailed validation and error reporting
+  - Added comprehensive logging to identify why services were being skipped during JSON to database migration
+  - Improved error handling with structured logging and clear success/failure indicators (✅/❌)
+  - Fixed database save operation error capture and reporting
+  - Migration now provides detailed feedback on service structure, validation results, and processing status
+
+### Technical
+- Enhanced migration debugging capabilities for better issue diagnosis
+- Improved validation feedback for service configurations
+- Added structured JSON logging for complex migration objects
+- Better exception handling and error message clarity
+- More robust migration logic to handle edge cases and validation failures
+
 ## [0.8.9] - 2025-07-19
 
 ### Fixed
