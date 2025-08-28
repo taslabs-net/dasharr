@@ -1,10 +1,37 @@
 services:
   dasharr:
+    image: schenanigans/dasharr:latest
     container_name: dasharr
     ports:
-      - 3000:3000
+      - "3000:3000"
     volumes:
-      - ./config:/app/config
-    image: schenanigans/dasharr:latest
-    env_file: .env
-networks: {}
+      - dasharr_config:/app/config
+      # Optional: Use bind mount instead
+      # - ./config:/app/config
+    environment:
+      # Optional: Set user/group IDs for file permissions
+      - PUID=1000
+      - PGID=1000
+      # Optional: Set timezone
+      - TZ=America/New_York
+      # Optional: Set log level (error, warn, info, debug)
+      # - LOG_LEVEL=info
+      # Optional: Security configuration
+      # - DASHARR_ENCRYPTION_KEY=your-32-char-key
+      # - DASHARR_TRUSTED_ORIGINS=https://dasharr.yourdomain.com
+      # Optional: Allow self-signed certificates (default: true)
+      # - ALLOW_SELF_SIGNED_CERTS=true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  dasharr_config:
+
+networks:
+  default:
+    name: dasharr-network
