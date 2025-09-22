@@ -1,0 +1,29 @@
+---
+title: Overseerr
+description: Configure Overseerr request management systems for your media server
+---
+
+<MultiServiceConfig serviceType="overseerr" serviceName="Overseerr" />
+
+## Configuration Guide
+
+### Required Settings
+
+- **Server URL**: The URL of your Overseerr instance (e.g., `http://192.168.1.100:5055` or `https://overseerr.yourdomain.com`)
+- **API Key**: Your Overseerr API key for authentication
+
+### Finding Your API Key
+
+1. Open Overseerr web interface
+2. Go to Settings → General
+3. Find the API Key section
+4. Click "Copy" to copy your API key
+
+### Alternative: Environment Variables
+
+You can also configure Overseerr using environment variables:
+
+```bash
+OVERSEERR_URL=http://192.168.1.100:5055
+OVERSEERR_API_KEY=your_api_key_here
+```

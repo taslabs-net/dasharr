@@ -1,0 +1,86 @@
+---
+title: UniFi
+description: Configure your UniFi Network Controller connections to monitor network status and statistics
+---
+
+<UnifiConfig />
+
+## Configuration Guide
+
+### Required Settings
+
+- **Controller URL**: The URL of your UniFi controller (e.g., `https://192.168.1.1` or `https://10.1.0.254`)
+
+### Optional Settings
+
+- **Site API Keys**: API keys for each UniFi site (up to 5 sites supported)
+- **Site Manager API Key**: API key for UniFi Site Manager (cloud management)
+
+### Generating API Keys
+
+1. Log into your UniFi controller
+2. Navigate to Settings → System → Advanced
+3. Enable "API" under "Advanced Features"
+4. Create a new API key with appropriate permissions
+
+### Alternative: Environment Variables
+
+You can also configure UniFi using environment variables:
+
+```bash
+# Site-specific configuration
+UNIFI_SITES=1                          # Number of sites to monitor (default: 1)
+UNIFI_URL_SITE_1=https://10.1.0.254    # URL for site 1
+UNIFI_API_KEY_1=your_site1_api_key     # API key for site 1
+
+# Add more sites as needed:
+# UNIFI_URL_SITE_2=https://10.1.0.250
+# UNIFI_API_KEY_2=your_site2_api_key
+# UNIFI_URL_SITE_3=https://10.1.0.251
+# UNIFI_API_KEY_3=your_site3_api_key
+
+# UniFi Site Manager (optional cloud management)
+UNIFI_SITE_MANAGER=false               # Enable Site Manager API (default: false)
+UNIFI_SITE_MANAGER_API_KEY=your_key    # Only needed if UNIFI_SITE_MANAGER=true
+```
+
+### Dynamic Site Configuration
+
+The dashboard will automatically detect and display sites based on the `UNIFI_SITES` environment variable. For example:
+- `UNIFI_SITES=1` will use only `UNIFI_API_KEY_1` (default)
+- `UNIFI_SITES=2` will use `UNIFI_API_KEY_1` and `UNIFI_API_KEY_2`
+- `UNIFI_SITES=3` will use `UNIFI_API_KEY_1`, `UNIFI_API_KEY_2`, and `UNIFI_API_KEY_3`
+- And so on, up to 5 sites
+
+The Site Manager integration is optional and controlled by `UNIFI_SITE_MANAGER`:
+- `UNIFI_SITE_MANAGER=false` - Site Manager will not be shown (default)
+- `UNIFI_SITE_MANAGER=true` - Site Manager will be shown if API key is configured
+
+### Security Notes
+
+- UniFi API keys provide read-only access to network statistics
+- The dashboard only reads device status, client counts, and traffic statistics
+- No network configuration changes are made through the API
+
+### Self-Signed SSL Certificates
+
+If your UniFi controller uses a self-signed SSL certificate (common in home labs), you can disable TLS verification:
+
+```bash
+TLS_VERIFY=false
+```
+
+**Warning**: This disables SSL certificate verification. Only use this in trusted environments.
+
+Example Docker Compose configuration:
+```yaml
+services:
+  dasharr:
+    image: schenanigans/dasharr:latest
+    environment:
+      - TLS_VERIFY=false  # For self-signed certs
+      - UNIFI_URL_SITE_1=https://10.11.11.254
+      - UNIFI_API_KEY_1=your_api_key
+```
+
+By default, `TLS_VERIFY=true` for secure connections. Set to `false` only when connecting to services with self-signed certificates.

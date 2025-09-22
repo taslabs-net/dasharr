@@ -1,0 +1,25 @@
+/* Hide GitHub icon and show "About" text instead */
+a[href="/admin/about"] svg {
+  display: none !important;
+}
+
+a[href="/admin/about"]::after {
+  content: "About";
+  font-size: 0.875rem;
+  color: rgb(107 114 126);
+}
+
+a[href="/admin/about"]:hover::after {
+  color: rgb(15 23 42);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  a[href="/admin/about"]::after {
+    color: rgb(148 163 184);
+  }
+  
+  a[href="/admin/about"]:hover::after {
+    color: rgb(226 232 240);
+  }
+}

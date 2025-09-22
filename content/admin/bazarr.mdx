@@ -1,0 +1,28 @@
+---
+title: Bazarr
+description: Configure your Bazarr connections to manage and download subtitles for your movies and TV shows
+---
+
+<MultiServiceConfig serviceType="bazarr" serviceName="Bazarr" />
+
+## Configuration Guide
+
+### Required Settings
+
+- **Server URL**: The URL of your Bazarr instance (e.g., `http://192.168.1.100:6767` or `https://bazarr.yourdomain.com`)
+- **API Key**: Your Bazarr API key for authentication
+
+### Finding Your API Key
+
+1. Open Bazarr web interface
+2. Go to Settings → General → Security
+3. Copy the API Key from the Security section
+
+### Environment Variables
+
+You can also configure Bazarr using environment variables:
+
+```bash
+BAZARR_URL=http://your-bazarr:6767
+BAZARR_API_KEY=your-bazarr-api-key
+```

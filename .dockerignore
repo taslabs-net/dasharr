@@ -1,0 +1,79 @@
+# Ignore everything by default
+*
+
+# Allow necessary files for Docker build
+
+# Source code
+!src/
+!src/**
+
+# Public assets
+!public/
+!public/**
+
+# Content (for build-time processing)
+!content/
+!content/**
+
+# Package files (needed for npm install)
+!package.json
+!package-lock.json
+
+# TypeScript config (needed for build)
+!tsconfig.json
+
+# Next.js config (needed for build)
+!next.config.mjs
+!next-env.d.ts
+
+# PostCSS/Tailwind config (needed for build)
+!postcss.config.mjs
+!tailwind.config.ts
+
+# Fumadocs config (needed for build)
+!fumadocs.config.json
+!source.config.ts
+
+# Source directory (needed for fumadocs)
+!.source/
+!.source/**
+
+# Server file (for production)
+!server.js
+
+# Docker scripts
+!entrypoint.sh
+!startup.sh
+
+# Example files (for reference, won't be used)
+!.env.example
+!compose.yaml.example
+
+# But still explicitly ignore these patterns
+node_modules/
+.next/
+.env
+.env.*
+*.env
+config/
+*.db
+*.db-shm
+*.db-wal
+*.key
+*.pem
+*.crt
+*.secret
+.auth-secret
+.encryption.key
+*.log
+.DS_Store
+.git/
+.gitignore
+.github/
+*.tar.gz
+*.tgz
+*.zip
+*.backup
+*.bak
+*.old
+tsconfig.tsbuildinfo

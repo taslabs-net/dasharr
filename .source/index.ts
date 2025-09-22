@@ -1,0 +1,17 @@
+// @ts-nocheck -- skip type checking
+import * as docs_12 from "../content/admin/unifi.mdx?collection=docs&hash=1752429687541"
+import * as docs_11 from "../content/admin/tautulli.mdx?collection=docs&hash=1752429687541"
+import * as docs_10 from "../content/admin/sonarr.mdx?collection=docs&hash=1752429687541"
+import * as docs_9 from "../content/admin/sabnzbd.mdx?collection=docs&hash=1752429687541"
+import * as docs_8 from "../content/admin/radarr.mdx?collection=docs&hash=1752429687541"
+import * as docs_7 from "../content/admin/qbittorrent.mdx?collection=docs&hash=1752429687541"
+import * as docs_6 from "../content/admin/prowlarr.mdx?collection=docs&hash=1752429687541"
+import * as docs_5 from "../content/admin/plex.mdx?collection=docs&hash=1752429687541"
+import * as docs_4 from "../content/admin/overseerr.mdx?collection=docs&hash=1752429687541"
+import * as docs_3 from "../content/admin/jellyseerr.mdx?collection=docs&hash=1752429687541"
+import * as docs_2 from "../content/admin/jellyfin.mdx?collection=docs&hash=1752429687541"
+import * as docs_1 from "../content/admin/index.mdx?collection=docs&hash=1752429687541"
+import * as docs_0 from "../content/admin/bazarr.mdx?collection=docs&hash=1752429687541"
+import { _runtime } from "fumadocs-mdx"
+import * as _source from "../source.config"
+export const docs = _runtime.docs<typeof _source.docs>([{ info: {"path":"bazarr.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/bazarr.mdx"}, data: docs_0 }, { info: {"path":"index.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/index.mdx"}, data: docs_1 }, { info: {"path":"jellyfin.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/jellyfin.mdx"}, data: docs_2 }, { info: {"path":"jellyseerr.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/jellyseerr.mdx"}, data: docs_3 }, { info: {"path":"overseerr.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/overseerr.mdx"}, data: docs_4 }, { info: {"path":"plex.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/plex.mdx"}, data: docs_5 }, { info: {"path":"prowlarr.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/prowlarr.mdx"}, data: docs_6 }, { info: {"path":"qbittorrent.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/qbittorrent.mdx"}, data: docs_7 }, { info: {"path":"radarr.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/radarr.mdx"}, data: docs_8 }, { info: {"path":"sabnzbd.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/sabnzbd.mdx"}, data: docs_9 }, { info: {"path":"sonarr.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/sonarr.mdx"}, data: docs_10 }, { info: {"path":"tautulli.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/tautulli.mdx"}, data: docs_11 }, { info: {"path":"unifi.mdx","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/unifi.mdx"}, data: docs_12 }], [{"info":{"path":"meta.json","absolutePath":"/Users/tim/Coding/Docker/dasharr/content/admin/meta.json"},"data":{"title":"General","pages":["bazarr","jellyfin","jellyseerr","overseerr","plex","prowlarr","qbittorrent","radarr","sabnzbd","sonarr","tautulli","unifi"]}}])

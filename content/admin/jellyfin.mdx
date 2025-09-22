@@ -1,0 +1,30 @@
+---
+title: Jellyfin
+description: Configure your Jellyfin Media Server connections to display media information on the dashboard
+---
+
+<MultiServiceConfig serviceType="jellyfin" serviceName="Jellyfin" />
+
+## Configuration Guide
+
+### Required Settings
+
+- **Server URL**: The URL of your Jellyfin server (e.g., `http://192.168.1.100:8096` or `https://jellyfin.yourdomain.com`)
+- **API Key**: Your Jellyfin API key for authentication
+
+### Creating a Jellyfin API Key
+
+1. Log into Jellyfin as an administrator
+2. Go to Dashboard → API Keys
+3. Click "Add API Key"
+4. Give it a descriptive name (e.g., "Dasharr")
+5. Copy the generated key
+
+### Alternative: Environment Variables
+
+You can also configure Jellyfin using environment variables:
+
+```bash
+JELLYFIN_URL=http://192.168.1.100:8096
+JELLYFIN_API_KEY=your_jellyfin_api_key_here
+```

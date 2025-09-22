@@ -1,0 +1,29 @@
+---
+title: SABnzbd
+description: Configure SABnzbd connections for download management
+---
+
+<MultiServiceConfig serviceType="sabnzbd" serviceName="SABnzbd" />
+
+## Configuration Guide
+
+### Required Settings
+
+- **URL**: The web interface URL of your SABnzbd instance
+- **API Key**: Your SABnzbd API key for authentication
+
+### Finding Your API Key
+
+1. Open SABnzbd web interface
+2. Go to **Config** > **General**
+3. Look for **API Key** field
+4. Copy the API key value
+
+### Alternative: Environment Variables
+
+You can also configure SABnzbd using environment variables:
+
+```bash
+SABNZBD_URL=https://your-sabnzbd-url:8080
+SABNZBD_API_KEY=your_api_key_here
+```

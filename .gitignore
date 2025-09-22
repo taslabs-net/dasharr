@@ -1,0 +1,101 @@
+# Ignore everything by default
+*
+
+# Git configuration
+!.gitignore
+!.gitattributes
+
+# GitHub/Git workflows
+!.github/
+!.github/**
+
+# Husky git hooks
+!.husky/
+!.husky/**
+
+# Source code
+!src/
+!src/**
+
+# Public assets
+!public/
+!public/**
+
+# Content/Documentation
+!content/
+!content/**
+!docs/
+!docs/**
+
+# Configuration files (samples only)
+!.env.example
+!compose.yaml.example
+!*.example
+
+# Project configuration
+!package.json
+!package-lock.json
+!tsconfig.json
+!next.config.mjs
+!next-env.d.ts
+!postcss.config.mjs
+!tailwind.config.ts
+!fumadocs.config.json
+!commitlint.config.js
+!eslint.config.js
+!source.config.ts
+
+# Scripts and deployment
+!entrypoint.sh
+!startup.sh
+!server.js
+!deploy.sh
+
+# Docker files
+!Dockerfile
+!.dockerignore
+
+# Documentation
+!README.md
+!CHANGELOG.md
+!LICENSE
+!COMMIT_GUIDE.md
+!CONTRIBUTING.md
+
+
+
+# Source directory
+!.source/
+!.source/**
+
+# But still ignore these patterns everywhere
+node_modules/
+.next/
+.DS_Store
+*.log
+*.pid
+*.seed
+*.pid.lock
+.env
+.env.local
+.env.*.local
+config/
+dist/
+build/
+tmp/
+temp/
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+*.db
+*.db-shm
+*.db-wal
+*.key
+*.pem
+*.crt
+*.secret
+.auth-secret
+.encryption.key
+tsconfig.tsbuildinfo

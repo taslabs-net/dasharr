@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+/* Custom purple color for Dasharr UI elements */
+.bg-dasharr-purple { background-color: #8800FF; }
+.hover\:bg-dasharr-purple-dark:hover { background-color: #6600CC; }
+.text-dasharr-purple { color: #8800FF; }
+.border-dasharr-purple { border-color: #8800FF; }
+.ring-dasharr-purple { --tw-ring-color: #8800FF; }
+.focus\:ring-dasharr-purple:focus { --tw-ring-color: #8800FF; }
+
+/* Purple with opacity */
+.bg-dasharr-purple\/10 { background-color: rgba(136, 0, 255, 0.1); }
+.hover\:bg-dasharr-purple\/10:hover { background-color: rgba(136, 0, 255, 0.1); }
+.hover\:bg-dasharr-purple\/20:hover { background-color: rgba(136, 0, 255, 0.2); }
+.border-dasharr-purple\/20 { border-color: rgba(136, 0, 255, 0.2); }
+.ring-dasharr-purple\/20 { --tw-ring-color: rgba(136, 0, 255, 0.2); }
+
+/* Peer state variants for toggle switches */
+.peer:focus ~ .peer-focus\:ring-dasharr-purple\/20 { --tw-ring-color: rgba(136, 0, 255, 0.2); }
+.peer:checked ~ .peer-checked\:bg-dasharr-purple { background-color: #8800FF; }
+
+/* Enhanced drag and drop styles */
+.draggable-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.draggable-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.draggable-card[data-dragging="true"] {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  .draggable-card {
+    touch-action: manipulation;
+  }
+  
+  .draggable-card:active {
+    transform: scale(1.02);
+  }
+}

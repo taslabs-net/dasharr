@@ -1,0 +1,32 @@
+---
+title: qBittorrent
+description: Configure qBittorrent torrent client connections for download monitoring
+---
+
+<MultiServiceConfig serviceType="qbittorrent" serviceName="qBittorrent" />
+
+## Configuration Guide
+
+### Required Settings
+
+- **Server URL**: The URL of your qBittorrent WebUI (e.g., `http://192.168.1.100:8080`)
+- **Username**: Your qBittorrent WebUI username
+- **Password**: Your qBittorrent WebUI password
+
+### Enabling WebUI Access
+
+1. Open qBittorrent
+2. Go to Tools → Options → Web UI
+3. Enable "Web User Interface (Remote control)"
+4. Set your username and password
+5. Note the port number (default: 8080)
+
+### Alternative: Environment Variables
+
+You can also configure qBittorrent using environment variables:
+
+```bash
+QBITTORRENT_URL=http://192.168.1.100:8080
+QBITTORRENT_USERNAME=admin
+QBITTORRENT_PASSWORD=your_password_here
+```

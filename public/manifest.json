@@ -1,0 +1,72 @@
+{
+  "name": "Dasharr Media Dashboard",
+  "short_name": "Dasharr",
+  "description": "Dashboard for Stuff",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#1a1a1a",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicons/light/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicons/light/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicons/dark/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable",
+      "media": "(prefers-color-scheme: dark)"
+    },
+    {
+      "src": "/favicons/dark/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable",
+      "media": "(prefers-color-scheme: dark)"
+    }
+  ],
+  "categories": ["entertainment", "productivity"],
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "label": "Dashboard Overview"
+    },
+    {
+      "src": "/screenshot2.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "label": "Service Details"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Plex",
+      "url": "/plex",
+      "description": "Open Plex dashboard"
+    },
+    {
+      "name": "Jellyfin",
+      "url": "/jellyfin",
+      "description": "Open Jellyfin dashboard"
+    },
+    {
+      "name": "Admin",
+      "url": "/admin",
+      "description": "Open admin settings"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}

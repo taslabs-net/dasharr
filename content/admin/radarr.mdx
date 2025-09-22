@@ -1,0 +1,28 @@
+---
+title: Radarr
+description: Configure your Radarr connections to monitor and manage your movie collections
+---
+
+<MultiServiceConfig serviceType="radarr" serviceName="Radarr" />
+
+## Configuration Guide
+
+### Required Settings
+
+- **Server URL**: The URL of your Radarr instance (e.g., `http://192.168.1.100:7878` or `https://radarr.yourdomain.com`)
+- **API Key**: Your Radarr API key for authentication
+
+### Finding Your API Key
+
+1. Open Radarr web interface
+2. Go to Settings → General
+3. Copy the API Key
+
+### Alternative: Environment Variables
+
+You can also configure Radarr using environment variables:
+
+```bash
+RADARR_URL=http://192.168.1.100:7878
+RADARR_API_KEY=your_api_key_here
+```

@@ -1,0 +1,29 @@
+---
+title: Prowlarr
+description: Configure Prowlarr connections for indexer management
+---
+
+<MultiServiceConfig serviceType="prowlarr" serviceName="Prowlarr" />
+
+## Configuration Guide
+
+### Required Settings
+
+- **URL**: The web interface URL of your Prowlarr instance
+- **API Key**: Your Prowlarr API key for authentication
+
+### Finding Your API Key
+
+1. Open Prowlarr web interface
+2. Go to **Settings** > **General**
+3. Look for **API Key** field
+4. Copy the API key value
+
+### Alternative: Environment Variables
+
+You can also configure Prowlarr using environment variables:
+
+```bash
+PROWLARR_URL=https://your-prowlarr-url:9696
+PROWLARR_API_KEY=your_api_key_here
+```

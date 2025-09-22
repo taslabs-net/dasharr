@@ -1,0 +1,21 @@
+services:
+  dasharr:
+    image: schenanigans/dasharr:latest
+    container_name: dasharr
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config:/app/config
+    env_file:
+      - .env
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York  # Optional: Set your timezone
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/startup"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

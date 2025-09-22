@@ -1,0 +1,17 @@
+{
+  "title": "General",
+  "pages": [
+    "bazarr",
+    "jellyfin",
+    "jellyseerr",
+    "overseerr",
+    "plex",
+    "prowlarr",
+    "qbittorrent",
+    "radarr",
+    "sabnzbd",
+    "sonarr",
+    "tautulli",
+    "unifi"
+  ]
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Check if we're in interactive mode (not a merge, squash, or amend)
+if [ "$2" != "merge" ] && [ "$2" != "squash" ] && [ "$2" != "template" ]; then
+  # Check if commitizen is being used
+  if [ -z "$HUSKY_GIT_PARAMS" ] && [ -t 1 ]; then
+    exec < /dev/tty && npx cz --hook || true
+  fi
+fi

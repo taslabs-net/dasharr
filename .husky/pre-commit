@@ -1,0 +1,18 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run ESLint
+echo "🔍 Running ESLint..."
+npx eslint . --ext .js,.jsx,.ts,.tsx || {
+  echo "❌ ESLint found errors. Please fix them before committing."
+  exit 1
+}
+
+# Run TypeScript compiler check
+echo "📝 Checking TypeScript..."
+npx tsc --noEmit || {
+  echo "❌ TypeScript compilation failed. Please fix type errors before committing."
+  exit 1
+}
+
+echo "✅ Pre-commit checks passed!"
