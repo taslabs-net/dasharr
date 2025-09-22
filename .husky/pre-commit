@@ -1,6 +1,13 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+# Check version consistency
+echo "🔍 Checking version consistency..."
+node scripts/check-version.js || {
+  echo "❌ Version consistency check failed. Please ensure all versions match."
+  exit 1
+}
+
 # Run ESLint
 echo "🔍 Running ESLint..."
 npx eslint . --ext .js,.jsx,.ts,.tsx || {
