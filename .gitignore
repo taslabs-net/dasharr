@@ -40,16 +40,13 @@
 !next-env.d.ts
 !postcss.config.mjs
 !tailwind.config.ts
-!fumadocs.config.json
-!commitlint.config.js
-!eslint.config.js
-!source.config.ts
 
-# Scripts and deployment
+# Scripts and executables
 !entrypoint.sh
 !startup.sh
-!server.js
 !deploy.sh
+!scripts/
+!scripts/**/*.js
 
 # Docker files
 !Dockerfile
