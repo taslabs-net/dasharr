@@ -18,11 +18,10 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
 COPY .source ./.source
 COPY source.config.ts* ./
 COPY next.config.mjs tsconfig.json ./
-# Skip postinstall scripts during Docker build
-ENV SKIP_POSTINSTALL=1
+# Install dependencies and compile native modules
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci --ignore-scripts && npm run postinstall || true; \
+  elif [ -f package-lock.json ]; then npm ci; \
   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
   else echo "Lockfile not found." && exit 1; \
   fi
