@@ -2,27 +2,6 @@
 
 This is the main Dasharr application source code - a unified media dashboard for monitoring your media server ecosystem.
 
-## Recent Updates (January 2025)
-
-### Authentication System
-- **Authentication disabled by default** - no login required until explicitly enabled
-- **UI-based configuration** with "Enable Admin Auth" toggle in settings
-- **Environment variable override** - env vars take precedence over UI settings
-- **Secure password storage** using bcrypt hashing in SQLite database
-
-### Metrics Push System
-- **Complete HTTP POST implementation** with Bearer token authentication
-- **External metrics endpoint support** for analytics platforms
-- **Comprehensive metrics collection** for Sonarr, Radarr, and Prowlarr (50+ metrics)
-- **Progressive UI design** with conditional field display
-- **Real-time testing** with Test Push button and immediate feedback
-
-### Architecture Changes
-- **Header Authentication**: Uses `x-client-secret` header instead of body parameters
-- **Flexible endpoints**: Support for various analytics platforms
-- **Enhanced Admin UI**: Clean interface with Enable Push toggle revealing configuration
-- **Automatic retry logic** and comprehensive error handling
-- **Environment variable support** for all configuration options
 
 ## Metrics Collection
 
