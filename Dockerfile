@@ -18,6 +18,9 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
 COPY .source ./.source
 COPY source.config.ts* ./
 COPY next.config.mjs tsconfig.json ./
+# Also copy src/components for mdx-components imports
+COPY src/components ./src/components
+COPY src/mdx-components.tsx ./src/
 # Skip postinstall scripts during Docker build
 ENV SKIP_POSTINSTALL=1
 RUN \
