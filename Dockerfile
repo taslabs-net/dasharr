@@ -18,6 +18,8 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
 COPY .source ./.source
 COPY source.config.ts* ./
 COPY next.config.mjs tsconfig.json ./
+# Copy src directory for mdx-components during build
+COPY src ./src
 # Install dependencies and compile native modules
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
