@@ -2,7 +2,7 @@
 
 This is the main Dasharr application source code - a unified media dashboard for monitoring your media server ecosystem.
 
-## 🚀 Recent Updates (January 2025)
+## Recent Updates (January 2025)
 
 ### Authentication System
 - **Authentication disabled by default** - no login required until explicitly enabled
@@ -24,7 +24,7 @@ This is the main Dasharr application source code - a unified media dashboard for
 - **Automatic retry logic** and comprehensive error handling
 - **Environment variable support** for all configuration options
 
-## 📊 Metrics Collection
+## Metrics Collection
 
 ### Supported Services
 The application now collects comprehensive metrics from:
@@ -51,7 +51,7 @@ The application now collects comprehensive metrics from:
 - Average response times
 - Health monitoring
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -102,7 +102,7 @@ Access `/admin` to configure:
 - **Proxy Settings**: Auto-detect and configure reverse proxy settings
 - **Logging**: Adjust log levels and timezone
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 ### Quick Start
 ```bash
@@ -137,7 +137,7 @@ services:
     restart: unless-stopped
 ```
 
-## 📡 Metrics Push Architecture
+## Metrics Push Architecture
 
 ### How It Works
 1. **Collection**: Services are polled based on the Global Polling interval
@@ -170,7 +170,7 @@ x-client-secret: your-32-character-secret
 }
 ```
 
-## 📊 Analytics & Dashboards
+## Analytics & Dashboards
 
 ### Comprehensive Metrics Coverage
 With **50+ metrics** collected across all services, Dasharr provides enterprise-level monitoring data:
@@ -196,31 +196,31 @@ With **50+ metrics** collected across all services, Dasharr provides enterprise-
 
 ### Dashboard Possibilities with Cloudflare Analytics Engine
 
-#### **📈 Media Library Growth**
+#### **Media Library Growth**
 - Series/Movies added over time
 - Quality distribution trends (4K adoption, HD vs SD)
 - Storage usage growth and projections
 - Episode/Movie availability ratios
 
-#### **⚡ Download Performance**
+#### **Download Performance**
 - Queue depth over time
 - Download speeds and completion rates
 - Failed vs successful downloads
 - Peak usage hours and patterns
 
-#### **🔍 System Health Monitoring**
+#### **System Health Monitoring**
 - Indexer reliability scores and uptime
 - API response times across services
 - Health issue frequency and resolution
 - Download client performance comparisons
 
-#### **💎 Quality Insights**
+#### **Quality Insights**
 - 4K vs HD vs SD breakdown over time
 - Average file sizes by quality
 - Storage efficiency metrics
 - Quality upgrade patterns
 
-#### **📊 Operational Analytics**
+#### **Operational Analytics**
 - Service availability and uptime
 - Error rates and failure patterns
 - Performance bottlenecks identification
@@ -228,25 +228,25 @@ With **50+ metrics** collected across all services, Dasharr provides enterprise-
 
 ### Advanced Visualizations
 
-#### **🔴 Real-time Dashboards**
+#### **Real-time Dashboards**
 - Live queue status across all services
 - Current download rates and ETA
 - Health status indicators
 - Storage utilization gauges
 
-#### **📅 Historical Trends**
+#### **Historical Trends**
 - Monthly/yearly library growth
 - Download success rates over time
 - Quality migration patterns
 - Performance degradation alerts
 
-#### **⚖️ Comparative Analysis**
+#### **Comparative Analysis**
 - Service efficiency comparisons
 - Indexer performance rankings
 - Peak vs off-peak usage patterns
 - Cost-per-GB analysis
 
-#### **🚨 Alerting & Notifications**
+#### **Alerting & Notifications**
 - Health issue alerts
 - Storage capacity warnings
 - Performance degradation notifications
@@ -260,7 +260,7 @@ With comprehensive metrics + Cloudflare Analytics Engine:
 - **Monitor service efficiency** and optimize configurations
 - **Create SLA dashboards** for your media infrastructure
 
-## 🧪 Testing
+## Testing
 
 ### Test Metrics Push
 Use the test endpoint to verify connectivity:
@@ -287,7 +287,7 @@ curl -X POST https://your-worker.workers.dev/api/v1/metrics \
   }'
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 dasharr/
@@ -311,7 +311,7 @@ dasharr/
 └── Dockerfile                # Container definition
 ```
 
-## 🔍 Monitoring & Debugging
+## Monitoring & Debugging
 
 ### Check Container Logs
 ```bash
@@ -340,7 +340,7 @@ LOG_LEVEL=debug docker compose up
    - Verify services are on the same Docker network
    - Check API keys are correct
 
-## 🚧 Development
+## Development
 
 ### Local Development
 ```bash
@@ -359,7 +359,7 @@ npm start
 - `.env` - Your local configuration (git ignored)
 - `config/` - Runtime configuration storage
 
-## 📝 Recent Changes Log
+## Recent Changes Log
 
 ### January 2025
 - **Authentication Fix**: Moved secret from request body to `x-client-secret` header for Cloudflare compatibility
@@ -374,12 +374,12 @@ npm start
 - **Error Handling**: Enhanced retry logic and proper authentication
 - **Container Deployment**: Successfully deployed with :dev tag on dockge server (10.11.11.2)
 
-## 🔗 Related Documentation
+## Related Documentation
 
 - Main project docs: `/project-support-docs/`
 - Deployment scripts: `/project-support-docs/scripts/`
 - API documentation: `/Users/tim/Coding/apidocs/`
 
-## 📄 License
+## License
 
 Private project - not for public distribution
